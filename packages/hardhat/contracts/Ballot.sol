@@ -83,12 +83,11 @@ contract Ballot {
 
     function vote(uint proposal) external onlyWhileVoting {
         Voter storage sender = voters[msg.sender];
-        require(sender.weight != 0, "Has no right to vote");
         require(!sender.voted, "Already voted");
 
         sender.voted = true;
         sender.vote = proposal;
-        proposals[proposal].voteCount += sender.weight;
+        proposals[proposal].voteCount += 1;
     }
 
     function winningProposal() public view returns (uint winningProposal_) {
@@ -108,4 +107,5 @@ contract Ballot {
     function endVoting() external onlyChairperson {
         votingEnded = true;
     }
+
 }

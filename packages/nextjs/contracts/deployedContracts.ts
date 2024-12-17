@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   31337: {
     Ballot: {
-      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      address: "0x82B769500E34362a76DF81150e12C746093D954F",
       abi: [
         {
           inputs: [
